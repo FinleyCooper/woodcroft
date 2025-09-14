@@ -1,0 +1,20 @@
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    image: woodcroft-backend
+    volumes:
+      - type: volume
+        source: sqlite-db
+        target: /backend/database/data
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    image: woodcroft-frontend
+    ports:
+      - 8000:80
+
+volumes:
+  sqlite-db:
