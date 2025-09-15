@@ -4,18 +4,210 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Woodcroft | A Cornish Getaway</title>
+    <link rel="stylesheet" href="/src/styles.css">
     <script type="module" src="/src/main.js"></script>
   </head>
   <body>
     <header>
       <div class="header-container">
         <h1>Woodcroft<span class="subtitle">A holiday home on the edge of the Bodmin Moors</span></h1>
+        <nav class="main-nav">
+          <ul>
+            <li><a href="#hero" data-section="hero">Home</a></li>
+            <li><a href="#gallery" data-section="gallery">Gallery</a></li>
+            <li><a href="#about" data-section="about">About</a></li>
+            <li><a href="#booking" data-section="booking">Booking</a></li>
+          </ul>
+        </nav>
       </div>
     </header>
-    <div class="page-container">
-      <div class="main-photo-container">
-        <img class="main-photo" src="/assets/back-patio2.jpg" alt="Woodcroft  front outside view" />
+
+    <main>
+      <!-- Hero Section -->
+      <section id="hero" class="hero-section">
+        <div class="hero-image-container">
+          <img class="hero-image" src="/src/photos/back-patio2.jpg" alt="Woodcroft holiday home with beautiful patio and countryside views" />
+        </div>
+      </section>
+
+      <!-- Photo Gallery Section -->
+      <section id="gallery" class="gallery-section">
+        <div class="container">
+          <h2>Photo Gallery</h2>
+          <div class="photo-grid">
+            <div class="photo-item">
+              <img src="/src/photos/back-patio.jpg" alt="Back patio area with outdoor seating and scenic countryside views">
+              <div class="photo-overlay">
+                <p>Back patio area with outdoor seating and scenic countryside views</p>
+              </div>
+            </div>
+            <div class="photo-item">
+              <img src="/src/photos/back-patio2.jpg" alt="Extended patio view showing the full outdoor entertaining space">
+              <div class="photo-overlay">
+                <p>Extended patio view showing the full outdoor entertaining space</p>
+              </div>
+            </div>
+            <div class="photo-item">
+              <img src="/src/photos/hottub.jpg" alt="Private hot tub area perfect for relaxation">
+              <div class="photo-overlay">
+                <p>Private hot tub area perfect for relaxation</p>
+              </div>
+            </div>
+            <div class="photo-item">
+              <img src="/src/photos/main-bathroom.jpg" alt="Spacious main bathroom with modern fixtures">
+              <div class="photo-overlay">
+                <p>Spacious main bathroom with modern fixtures</p>
+              </div>
+            </div>
+            <div class="photo-item">
+              <img src="/src/photos/main-room.jpg" alt="Comfortable main living area with traditional charm">
+              <div class="photo-overlay">
+                <p>Comfortable main living area with traditional charm</p>
+              </div>
+            </div>
+            <div class="photo-item">
+              <img src="/src/photos/master-bedroom.jpg" alt="Cozy master bedroom with countryside views">
+              <div class="photo-overlay">
+                <p>Cozy master bedroom with countryside views</p>
+              </div>
+            </div>
+            <div class="photo-item photo-placeholder">
+              <div class="placeholder-content">More photos coming soon</div>
+              <div class="photo-overlay">
+                <p>Additional photos will be added here</p>
+              </div>
+            </div>
+            <div class="photo-item photo-placeholder">
+              <div class="placeholder-content">More photos coming soon</div>
+              <div class="photo-overlay">
+                <p>Additional photos will be added here</p>
+              </div>
+            </div>
+            <div class="photo-item photo-placeholder">
+              <div class="placeholder-content">More photos coming soon</div>
+              <div class="photo-overlay">
+                <p>Additional photos will be added here</p>
+              </div>
+            </div>
+            <div class="photo-item photo-placeholder">
+              <div class="placeholder-content">More photos coming soon</div>
+              <div class="photo-overlay">
+                <p>Additional photos will be added here</p>
+              </div>
+            </div>
+            <div class="photo-item photo-placeholder">
+              <div class="placeholder-content">More photos coming soon</div>
+              <div class="photo-overlay">
+                <p>Additional photos will be added here</p>
+              </div>
+            </div>
+            <div class="photo-item photo-placeholder">
+              <div class="placeholder-content">More photos coming soon</div>
+              <div class="photo-overlay">
+                <p>Additional photos will be added here</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="about-section">
+        <div class="container">
+          <div class="split-content">
+            <div class="about-content">
+              <h2>About Woodcroft</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+              <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+            </div>
+            <div class="local-area-content">
+              <h2>Local Area</h2>
+              <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.</p>
+              <p>Consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.</p>
+              <p>Nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Booking Section -->
+      <section id="booking" class="booking-section">
+        <div class="container">
+          <h2>Book Your Stay</h2>
+          <div class="booking-content">
+            <div class="calendar-container">
+              <h3>Availability</h3>
+              <div class="calendar">
+                <div class="calendar-header">
+                  <button class="calendar-nav" id="prevMonth">&lt;</button>
+                  <h4 id="currentMonth">September 2025</h4>
+                  <button class="calendar-nav" id="nextMonth">&gt;</button>
+                </div>
+                <div class="calendar-weekdays">
+                  <div>Sun</div>
+                  <div>Mon</div>
+                  <div>Tue</div>
+                  <div>Wed</div>
+                  <div>Thu</div>
+                  <div>Fri</div>
+                  <div>Sat</div>
+                </div>
+                <div class="calendar-days" id="calendarDays">
+                </div>
+              </div>
+              <div class="calendar-legend">
+                <div class="legend-item">
+                  <span class="legend-color available"></span>
+                  <span>Available</span>
+                </div>
+                <div class="legend-item">
+                  <span class="legend-color booked"></span>
+                  <span>Booked</span>
+                </div>
+              </div>
+            </div>
+            
+            <div class="enquiry-container">
+              <h3>Make an Enquiry</h3>
+              <form class="enquiry-form" id="enquiryForm">
+                <div class="form-group">
+                  <label for="name">Name *</label>
+                  <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                  <label for="email">Email *</label>
+                  <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                  <label for="phone">Phone</label>
+                  <input type="tel" id="phone" name="phone">
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="checkin">Check-in Date</label>
+                    <input type="date" id="checkin" name="checkin">
+                  </div>
+                  <div class="form-group">
+                    <label for="checkout">Check-out Date</label>
+                    <input type="date" id="checkout" name="checkout">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="message">Message</label>
+                  <textarea id="message" name="message" rows="4" placeholder="Tell us about your stay requirements..."></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Enquiry</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container">
+        <a class="admin-link" href="#">Admin portal</a>
       </div>
-    </div> 
+    </footer>
   </body>
 </html>

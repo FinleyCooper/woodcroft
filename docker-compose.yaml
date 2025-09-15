@@ -4,6 +4,10 @@ services:
       context: ./backend
       dockerfile: Dockerfile
     image: woodcroft-backend
+    environment:
+      - EMAIL_USERNAME=${EMAIL_USERNAME}
+      - EMAIL_PASSWORD=${EMAIL_PASSWORD}
+      - EMAIL_DEFAULT_SENDER=${EMAIL_DEFAULT_SENDER}
     volumes:
       - type: volume
         source: sqlite-db
