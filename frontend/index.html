@@ -204,6 +204,91 @@
       </section>
     </main>
 
+    <!-- Admin Portal (hidden by default) -->
+    <div id="admin-portal" class="admin-portal hidden">
+      <div class="admin-container">
+        <div class="admin-header">
+          <h1>Woodcroft Admin Portal</h1>
+          <button class="back-to-site-btn" id="backToSite">← Back to Site</button>
+        </div>
+
+        <!-- PIN Entry Section -->
+        <div id="pin-entry" class="admin-section">
+          <div class="pin-container">
+            <h2>Enter Admin PIN</h2>
+            <form id="pin-form">
+              <div class="pin-input-group">
+                <input type="password" id="admin-pin" placeholder="Enter PIN" maxlength="10" required>
+                <button type="submit">Access Admin</button>
+              </div>
+              <div id="pin-error" class="error-message hidden"></div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Admin Dashboard (hidden until authenticated) -->
+        <div id="admin-dashboard" class="admin-section hidden">
+          <div class="dashboard-tabs">
+            <button class="tab-btn active" data-tab="bookings">Manage Bookings</button>
+            <button class="tab-btn" data-tab="create">Create Booking</button>
+          </div>
+
+          <!-- Bookings Management Tab -->
+          <div id="bookings-tab" class="tab-content active">
+            <div class="section-header">
+              <h2>Current Bookings</h2>
+              <button id="refresh-bookings" class="btn-secondary">Refresh</button>
+            </div>
+            <div class="bookings-container">
+              <div id="bookings-list" class="bookings-list">
+                <!-- Bookings will be loaded here -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Create Booking Tab -->
+          <div id="create-tab" class="tab-content">
+            <div class="section-header">
+              <h2>Create New Booking</h2>
+            </div>
+            <form id="create-booking-form" class="admin-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="booking-name">Name *</label>
+                  <input type="text" id="booking-name" name="name" required>
+                </div>
+                <div class="form-group">
+                  <label for="booking-phone">Phone *</label>
+                  <input type="tel" id="booking-phone" name="phone" required>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="booking-email">Email</label>
+                  <input type="email" id="booking-email" name="email">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="booking-arrival">Arrival Date *</label>
+                  <input type="date" id="booking-arrival" name="arrival_date" required>
+                </div>
+                <div class="form-group">
+                  <label for="booking-departure">Departure Date *</label>
+                  <input type="date" id="booking-departure" name="departure_date" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="booking-notes">Notes</label>
+                <textarea id="booking-notes" name="notes" rows="3" placeholder="Additional booking notes..."></textarea>
+              </div>
+              <button type="submit" class="btn-primary">Create Booking</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <footer>
       <div class="container">
         <a class="admin-link" href="#">Admin portal</a>

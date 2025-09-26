@@ -8,6 +8,7 @@ services:
       - EMAIL_USERNAME=${EMAIL_USERNAME}
       - EMAIL_PASSWORD=${EMAIL_PASSWORD}
       - EMAIL_DEFAULT_SENDER=${EMAIL_DEFAULT_SENDER}
+      - PASSCODE=${PASSCODE}
     volumes:
       - type: volume
         source: sqlite-db

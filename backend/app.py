@@ -1,4 +1,4 @@
-from datetime import timedelta
+from datetime import timedelta, datetime, date
 import sqlite3
 
 from email.utils import formataddr
@@ -55,10 +55,12 @@ def get_booked_dates():
 
     all_booked_dates = []
     for date_range in booked_dates:
-        start_date, end_date = date_range
+        start_date_str, end_date_str = date_range
+        start_date = datetime.strptime(start_date_str, '%Y-%m-%d').date()
+        end_date = datetime.strptime(end_date_str, '%Y-%m-%d').date()
         current_date = start_date
-        while current_date <= end_date:
-            all_booked_dates.append(current_date)
+        while current_date < end_date:
+            all_booked_dates.append(current_date.isoformat())
             current_date += timedelta(days=1)
 
     return jsonify({"booked_dates": all_booked_dates}), 200
@@ -106,12 +108,22 @@ def remove_booking(booking_id):
     db.remove_booking(booking_id)
     return jsonify({"message": "Booking removed successfully"}), 200
 
-@app.route('/api/all-bookings', methods=['GET'])
+@app.route('/api/all-bookings', methods=['POST'])
 @authorisation_required()
 def get_all_bookings():
     after_date = request.args.get('after_date', None)
     bookings = db.get_all_bookings(after_date)
-    return jsonify({"bookings": bookings}), 200
+    return jsonify({"bookings": [
+        {
+            "id": b[0],
+            "name": b[1],
+            "phone": b[2],
+            "arrival_date": b[3],
+            "departure_date": b[4],
+            "notes": b[5],
+            "email": b[6]
+        } for b in bookings
+    ]}), 200
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8081, debug=True)

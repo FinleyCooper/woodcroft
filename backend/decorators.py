@@ -9,7 +9,7 @@ def authorisation_required():
         def wrapped_function(*args, **kwargs):
             data = request.get_json()
             auth_token = data.get('auth_token') if data else None
-            if auth_token != current_app.config.get('PROD_PASSCODE'):
+            if auth_token != current_app.config.get('PASSCODE'):
                 return jsonify({"error": "Unauthorized"}), 401
             return func(*args, **kwargs)
         return wrapped_function
