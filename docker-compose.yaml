@@ -1,5 +1,6 @@
 services:
   backend:
+    restart: always
     build:
       context: ./backend
       dockerfile: Dockerfile
@@ -14,6 +15,7 @@ services:
         source: sqlite-db
         target: /backend/database/data
   frontend:
+    restart: always
     build:
       context: ./frontend
       dockerfile: Dockerfile
