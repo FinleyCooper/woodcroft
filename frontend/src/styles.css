@@ -330,8 +330,12 @@ section h2 {
   border-right: none;
 }
 
-.calendar-day.available {
+.calendar-day.off-peak {
   background-color: #e8f5e8;
+}
+
+.calendar-day.peak {
+  background-color: #e0f7ff;
 }
 
 .calendar-day.booked {
@@ -349,8 +353,15 @@ section h2 {
 
 .calendar-legend {
   display: flex;
-  gap: 1rem;
+  flex-direction: column;
+  gap: 0.5rem;
   margin-top: 1rem;
+  align-items: center;
+}
+
+.legend-row {
+  display: flex;
+  gap: 1rem;
   justify-content: center;
 }
 
@@ -365,8 +376,12 @@ section h2 {
   height: 20px;
 }
 
-.legend-color.available {
+.legend-color.off-peak {
   background-color: #e8f5e8;
+}
+
+.legend-color.peak {
+  background-color: #e0f7ff;
 }
 
 .legend-color.booked {

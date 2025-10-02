@@ -10,6 +10,24 @@ class Calendar {
     this.init();
   }
 
+  getPeakStart(year) {
+    const june1 = new Date(year, 5, 1); // June 1
+    const dayOfWeek = june1.getDay(); // 0=Sun, 1=Mon, ..., 6=Sat
+    const daysToSubtract = dayOfWeek === 0 ? 6 : dayOfWeek - 1; // Days to Monday
+    const peakStart = new Date(june1);
+    peakStart.setDate(june1.getDate() - daysToSubtract);
+    return peakStart;
+  }
+
+  getPeakEnd(year) {
+    const aug31 = new Date(year, 7, 31); // August 31
+    const dayOfWeek = aug31.getDay();
+    const daysToAdd = dayOfWeek === 0 ? 0 : 7 - dayOfWeek; // Days to Sunday
+    const peakEnd = new Date(aug31);
+    peakEnd.setDate(aug31.getDate() + daysToAdd);
+    return peakEnd;
+  }
+
   async getBookedDates() {
         try {
             const response = await fetch('/api/booked-dates');
@@ -108,7 +126,15 @@ class Calendar {
       if (this.bookedDates.includes(dateString)) {
         dayElement.classList.add('booked');
       } else {
-        dayElement.classList.add('available');
+        const date = new Date(this.currentYear, this.currentMonth, day);
+        const peakStart = this.getPeakStart(this.currentYear);
+        const peakEnd = this.getPeakEnd(this.currentYear);
+        
+        if (date >= peakStart && date <= peakEnd) {
+          dayElement.classList.add('peak');
+        } else {
+          dayElement.classList.add('off-peak');
+        }
       }
     }
     

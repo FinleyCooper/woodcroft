@@ -128,10 +128,10 @@
             </div>
             <div class="local-area-content">
               <h2>Facilities</h2>
-              <p>The property has 3 bedrooms, two bedrooms have a double bed, and the third has a double bunk bed.</p>
+              <p>The property has 3 bedrooms, one with a king, one with a double, and one with a double bunk bed..</p>
+              <p>The main bathroom and the master en-suite both feature a double rain shower with unlacquered brass fittings.</p>
               <p>The kitchen is well equipped and includes an induction hob, an electric double oven and microwave, toaster, coffeemaker, dishwasher, fridge, and a freezer. The utility room also houses a sink and a washer dryer.</p>
               <p>The lounge features a smart TV, a Google Nest, Nintendo Switch, record player, speaker system and a woodburner.</p>
-              <p>The main bathroom and the master bedroom en-suite bathroom both feature a double rain shower with unlacquered brass fittings.</p>
             </div>
             <div class="local-area-content">
               <h2>Outside</h2>
@@ -169,13 +169,23 @@
                 </div>
               </div>
               <div class="calendar-legend">
-                <div class="legend-item">
-                  <span class="legend-color available"></span>
-                  <span>Available</span>
+                <div class="legend-row">
+                  <div class="legend-item">
+                      <span class="legend-color off-peak"></span>
+                      <span class="price-key">Off-Peak</span>
+                      <span class="price-subtext">£75/night</span>
+                  </div>
+                  <div class="legend-item">
+                      <span class="legend-color peak"></span>
+                      <span class="price-key">Peak</span>
+                      <span class="price-subtext">£100/night</span>
+                  </div>
                 </div>
-                <div class="legend-item">
-                  <span class="legend-color booked"></span>
-                  <span>Booked</span>
+                <div class="legend-row">
+                  <div class="legend-item">
+                    <span class="legend-color booked"></span>
+                    <span class="price-key">Booked</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -277,8 +287,8 @@
               </div>
               <div class="form-row">
                 <div class="form-group">
-                  <label for="booking-email">Email</label>
-                  <input type="email" id="booking-email" name="email">
+                  <label for="booking-email">Email *</label>
+                  <input type="email" id="booking-email" name="email" required>
                 </div>
               </div>
               <div class="form-row">
